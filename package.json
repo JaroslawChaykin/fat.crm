@@ -27,12 +27,24 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server -w server/db.json -p 3001"
+    "server": "json-server -w server/db.json -p 3001",
+    "sb": "start-storybook -p 6006 -s public",
+    "build-sb": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -48,7 +60,19 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-webpack5": "^6.5.13",
+    "@storybook/manager-webpack5": "^6.5.13",
+    "@storybook/node-logger": "^6.5.13",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/testing-library": "0.0.13",
+    "babel-plugin-named-exports-order": "0.0.2",
     "concurrently": "^7.5.0",
-    "json-server": "^0.17.1"
+    "json-server": "^0.17.1",
+    "prop-types": "^15.8.1",
+    "webpack": "^5.74.0"
   }
 }
