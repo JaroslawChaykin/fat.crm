@@ -1,5 +1,5 @@
-import { NewComponent } from './NewComponent/NewComponent';
+import { Button } from './Button/Button';
 
 export {
-  NewComponent
+  Button
 }

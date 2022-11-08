@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.css';
-import { NewComponent } from './components';
+import './App.scss';
+import { Button } from './components';
 
 function App() {
   return (
     <div className="App">
-      <NewComponent/>
+      <Button text={'Press me'} callback={() => console.log('I button')} rounded outline disabled />
     </div>
   );
 }
