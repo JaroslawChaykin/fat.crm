@@ -1,15 +1,10 @@
-import { Button} from './Button';
-import './Button.styles.scss'
+import {ButtonGroup} from './ButtonGroup';
+import './ButtonGroup.styles.scss'
 
 export default {
-  title: 'Buttons/Button',
-  component: Button,
+  title: 'Buttons/ButtonGroup',
+  component: ButtonGroup,
   argTypes: {
-    text: {
-      type: 'string',
-      description: 'Надпись в кнопке',
-      defaultValue: 'Press'
-    },
     rounded: {
       type: 'boolean',
       description: 'Округление',
@@ -34,22 +29,20 @@ export default {
         type: 'radio'
       }
     },
-    disabled: {
-      type: 'boolean',
-      description: 'Отключение кнопки',
-      defaultValue: 'false',
-    }
+    children: {
+      type: 'string',
+      description: 'Кнопки',
+      defaultValue: 'Hui',
+    },
   }
 }
 
-export const Primary = {
+export const Default = {
   args: {
-    text: 'Press',
     rounded: false,
     outline: false,
     primary: false,
-    icon: null,
     size: 'small',
-    disabled: false
+    children: 'Hui'
   },
 };

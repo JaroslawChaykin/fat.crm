@@ -1,11 +1,16 @@
 import React from 'react';
 import './App.scss';
-import { Button } from './components';
+import { Button, ButtonGroup } from './components';
 
 function App() {
   return (
     <div className="App">
-      <Button text={'Press me'} callback={() => console.log('I button')} rounded outline disabled />
+      <ButtonGroup rounded primary>
+        <Button text={'Press 1'} callback={() => console.log('I button')} />
+        <Button text={'Press 2'} callback={() => console.log('I button')} />
+        <Button text={'Press 3'} callback={() => console.log('I button')} />
+        <Button text={'Press 4'} callback={() => console.log('I button')} />
+      </ButtonGroup>
     </div>
   );
 }
