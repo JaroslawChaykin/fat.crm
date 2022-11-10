@@ -10,7 +10,8 @@ type ButtonTypeProps = {
   text: string,
   disabled?: boolean,
   callback: () => void,
-  active?: boolean
+  active?: boolean,
+  href?: string
 }
 
 export const Button: FC<ButtonTypeProps> = ({
@@ -23,7 +24,12 @@ export const Button: FC<ButtonTypeProps> = ({
                                               disabled,
                                               callback,
                                               active,
+                                              href,
+                                              ...args
                                             }) => {
+
+  const Tag = href ? 'a' : 'button';
+
   const classList = [
     rounded ? 'btn-rounded' : '',
     outline ? 'btn-outline' : '',
@@ -33,13 +39,15 @@ export const Button: FC<ButtonTypeProps> = ({
   ].filter(Boolean);
 
   return (
-    <button
+    <Tag
+      href={href || undefined}
       className={`btn ${classList.join(' ')}`}
       onClick={callback}
       disabled={disabled}
+      {...args}
     >
       {icon && <span className="btn-icon">{icon}</span>}
       <span>{text}</span>
-    </button>
+    </Tag>
   );
 };
