@@ -41,4 +41,8 @@
     cursor: none;
     opacity: 0.5;
   }
+  &.active {
+    background: #075962;
+    color: white;
+  }
 }
