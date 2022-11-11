@@ -9,9 +9,9 @@ type ButtonTypeProps = {
   size?: 'large' | 'small' | 'medium',
   text: string,
   disabled?: boolean,
-  callback: () => void,
   active?: boolean,
-  href?: string
+  href?: string,
+  onClick?: () => void
 }
 
 export const Button: FC<ButtonTypeProps> = ({
@@ -22,29 +22,29 @@ export const Button: FC<ButtonTypeProps> = ({
                                               size = 'small',
                                               text,
                                               disabled,
-                                              callback,
                                               active,
                                               href,
-                                              ...args
+                                              onClick,
+                                              ...props
                                             }) => {
 
   const Tag = href ? 'a' : 'button';
 
   const classList = [
-    rounded ? 'btn-rounded' : '',
-    outline ? 'btn-outline' : '',
-    primary ? 'btn-primary' : '',
+    rounded && 'btn-rounded',
+    outline && 'btn-outline',
+    primary && 'btn-primary',
     `btn-${size}`,
-    active ? 'active' : ''
+    active && 'active'
   ].filter(Boolean);
 
   return (
     <Tag
-      href={href || undefined}
+      href={href}
       className={`btn ${classList.join(' ')}`}
-      onClick={callback}
       disabled={disabled}
-      {...args}
+      onClick={onClick}
+      {...props}
     >
       {icon && <span className="btn-icon">{icon}</span>}
       <span>{text}</span>

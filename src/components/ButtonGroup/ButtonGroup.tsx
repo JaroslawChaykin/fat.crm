@@ -15,12 +15,12 @@ export const ButtonGroup: FC<PropsWithChildren<ButtonGroupTypeProps>> = ({
                                                                            outline,
                                                                            primary,
                                                                            vertical,
-                                                                           size = 'small',
+                                                                           size = 'large',
                                                                          }) => {
   const classList = [
-    rounded ? vertical ? 'btn-group-rounded-v' : 'btn-group-rounded' : '',
-    outline ? 'btn-group-outline' : '',
-    primary ? 'btn-group-primary' : '',
+    rounded && vertical ? 'btn-group-rounded-v' : 'btn-group-rounded',
+    outline && 'btn-group-outline',
+    primary && 'btn-group-primary',
     `btn-group-${size}`,
   ].filter(Boolean);
 
@@ -32,7 +32,8 @@ export const ButtonGroup: FC<PropsWithChildren<ButtonGroupTypeProps>> = ({
         return React.cloneElement(child, {
           rounded,
           outline,
-          primary
+          primary,
+          size
         });
       })}
     </div>
