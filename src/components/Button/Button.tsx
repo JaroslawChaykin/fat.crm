@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import './Button.styles.scss';
+import Icon from '../Icon/Icon';
 
 type ButtonTypeProps = {
   rounded?: boolean,
@@ -46,7 +47,9 @@ export const Button: FC<ButtonTypeProps> = ({
       onClick={onClick}
       {...props}
     >
-      {icon && <span className="btn-icon">{icon}</span>}
+      {icon && <span className="btn-icon">
+          <Icon icon={icon}  />
+      </span>}
       <span>{text}</span>
     </Tag>
   );

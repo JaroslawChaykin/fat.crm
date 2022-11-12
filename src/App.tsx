@@ -6,11 +6,11 @@ function App() {
 
   return (
     <div className="App">
-      <ButtonGroup rounded outline>
-        <Button text={'Press 1'} onClick={() => console.log('12')}/>
-        <Button text={'Press 2'} href={'/home'}/>
-        <Button text={'Press 3'}/>
-        <Button text={'Press 4'}/>
+      <ButtonGroup rounded outline size={'medium'}>
+        <Button text={'All'} onClick={() => console.log('12')}/>
+        <Button text={'Sessions'} href={'privet'} icon={'gauge solid'}/>
+        <Button text={'Source'} />
+        <Button text={'Referrals'} />
       </ButtonGroup>
     </div>
   );

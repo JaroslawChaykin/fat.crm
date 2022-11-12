@@ -1,3 +1,10 @@
+$border: 1px solid #eaeaea;
+$border-radius: 6px;
+$border-left: $border-radius 0 0 $border-radius;
+$border-right: 0 $border-radius $border-radius 0;
+$border-top: $border-radius $border-radius 0 0;
+$border-bottom: 0 0 $border-radius $border-radius;
+
 .btn-group {
   display: flex;
   width: fit-content;
@@ -7,10 +14,26 @@
       border-radius: 0;
     }
     .btn:first-child {
-      border-radius: 6px 6px 0 0;
+      border-radius: $border-top;
     }
     .btn:last-child {
-      border-radius: 0 0 6px 6px;
+      border-radius: $border-bottom;
+      border-bottom: $border;
+    }
+    &.btn-group-outline {
+      .btn:nth-child(odd) {
+        border-left: $border;
+        border-right: $border;
+        border-top: none;
+        border-bottom: none;
+      }
+      .btn:first-child {
+        border-left: $border;
+        border-top: $border;
+      }
+      .btn:last-child {
+        border-bottom: $border;
+      }
     }
   }
   &.btn-group-outline {
@@ -19,7 +42,7 @@
       border-right: none;
     }
     .btn:first-child {
-      border-left: 1px solid #eaeaea;
+      border-left: $border;
     }
   }
   &.btn-group-rounded {
@@ -27,16 +50,16 @@
       border-radius: 0;
     }
     .btn:first-child {
-      border-radius: 6px 0 0 6px;
+      border-radius: $border-left;
     }
     .btn:last-child {
-      border-radius: 0 6px 6px 0;
+      border-radius: $border-right;
     }
   }
   &.btn-group-primary {
     .btn:nth-child(odd) {
-      border-left: 1px solid #00717a;
-      border-right: 1px solid #00717a;
+      border-left: $border;
+      border-right: $border;
     }
     .btn:first-child {
       border-left: none;
