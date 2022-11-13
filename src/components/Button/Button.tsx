@@ -48,7 +48,7 @@ export const Button: FC<ButtonTypeProps> = ({
       {...props}
     >
       {icon && <span className="btn-icon">
-          <Icon icon={icon}  />
+          <Icon name={icon}  />
       </span>}
       <span>{text}</span>
     </Tag>

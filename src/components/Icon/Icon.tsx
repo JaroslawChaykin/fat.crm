@@ -2,13 +2,13 @@ import React, { FC } from 'react';
 
 
 type IconPropsType = {
-  icon: string,
+  name: string,
 }
 
-const Icon: FC<IconPropsType> = ({icon}) => {
+const Icon: FC<IconPropsType> = ({name}) => {
   return (
     <i
-      className={`fa fa-${icon}`} />
+      className={`fa fa-${name}`} />
   );
 };
 
